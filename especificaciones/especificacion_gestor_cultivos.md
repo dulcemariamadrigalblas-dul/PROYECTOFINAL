@@ -2,10 +2,10 @@ Clase: GestorCultivos
 
 
 Objetivo: 
-Administrar todos los cultivos microbiológicos registrados.
+Administrar todos los cultivos registrados por el usuario
 
 Responsabilidad:
-Controlar el almacenamiento, búsqueda y análisis de cultivos
+Almacenar, buscar, mostrar y generar estadísticas de los cultivos.
 
 A) Atributos
 Nombre: lista_cultivos
@@ -15,7 +15,7 @@ Tipo: list
 B) Constructor:
 1. init()
 Función:
-Crear una lista vacía para almacenar los objetos Cultivo
+Crear una lista llamada lista_cultivos
 
 C) Métodos
 1. agregar_cultivo()
@@ -23,8 +23,11 @@ Objetivo: Añade un nuevo cultivo
 
 2. Entradas: Objeto cultivo
 
+3. Atributos:
+lista_cultivos
+
 4. Algoritmo: 
-insertar el objeto en lista_cultivos
+insertar el cultivo usando append()
 
 5. Resultado: cultivo guardado
 
@@ -32,28 +35,34 @@ insertar el objeto en lista_cultivos
 D) mostrar_todos()
 1. Objetivo: Muestra todos los cultivos registrados
 
-2. Algoritmo: recorre la lista con un ciclo for
+2. Algoritmo: recorre la lista_cultivos con un ciclo for
 
 3. Resultado: informacion de cada cultivo
 
-E) buscar_caja()
+E) buscar_cultivo()
 1. Objetivo: encontrar un cultivo por número de caja
 
 2. Entrada: Numero de caja
 
-3. Resultado: Mostrar datos del cultivo
+3. Algoritmo: recorrer la lista hasta encontrar coincidencia
 
-4. Validación: si no existe, mostrar mensaje "error" 
+4. Resultado: Mostrar datos del cultivo
+
+5. Validación: si no existe, mostrar mensaje "error" 
 
 
 F) estadísticas()
-1. objetivo: obtener indicadores
+1. objetivo: Generar estadísticas generales
 
-2. cálculos: Colonias, caja con mayor creciemiento, num total de cultivos
+2. cálculos: total de cultivos, promedio de colonias, mayor y menor crecimiento
+
+3. resultados:
+mostrar estadísticas
 
 
 
 F) Reglas
-La lista solo debe almacenar objetos Cultivo
-No eliminar registros automáticamente
-Las estadísticas se calculan únicamente si existen cultivos registrados
+Solo se almacenarán objetos Cultivo.
+No eliminar registros automáticamente.
+Las estadísticas se calcularán únicamente si existen registros.
+La lista debe permanecer disponible durante toda la ejecución.

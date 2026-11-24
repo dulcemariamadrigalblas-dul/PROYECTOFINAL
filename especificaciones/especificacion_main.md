@@ -4,11 +4,13 @@ Especificación del Programa Principal
 1. Objetivo: Permitir al usuario interactuar con menú de opciones.
 
 2. Objeto: GestorCultivos
+gestor = GestorCultivos()
 
 3. Menú
 Registrar cultivo
 Mostrar cultivos
-Buscar cultivo por número de caja
+Buscar cultivo 
+ver estadísticas
 Salir
 
 
@@ -25,7 +27,7 @@ Ejecutar método
 ↓
 Regresar al menú
 ↓
-Salir
+Salir con opción 5
 
 5. Métodos que se llamarán
 -Opción 1
@@ -35,16 +37,23 @@ agregar_cultivo()
 mostrar_todos()
 
 -Opción 3
-buscar_caja()
+buscar_cultivo()
 
 -Opción 4
-Finalizar
+estadísticas()
+
+-Opción 4
+salir()
+
+
 
 
 6. Validaciones
-El usuario debe ingresar una opción válida
-Los valores numéricos deben ser mayores que cero cuando corresponda
-No se permite el ingreso de texto en campos numéricos
+No aceptar valores negativos para colonias.
+No aceptar texto en campos numéricos.
+No aceptar diluciones iguales a cero.
+No aceptar volúmenes iguales a cero.
+Validar que la opción del menú exista.
 
 7. Condición de salida
-El programa termina cuando el usuario selecciona la opción 4.
+La aplicación terminará únicamente cuando el usuario seleccione la opción 5.
