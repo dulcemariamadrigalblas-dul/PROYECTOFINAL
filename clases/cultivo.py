@@ -1,38 +1,48 @@
 class Cultivo:
-    '''
-    Representa un cultivo microbiológico
-    '''
 
-    def __init__(self, tipo_medio, tipo, dilucion, volumen, colonias):
+    def __init__(self, numero_caja,
+                 tipo_medio,
+                 dilucion,
+                 volumen,
+                 colonias):
+
+        self.numero_caja = numero_caja
         self.tipo_medio = tipo_medio
-        self.tipo = tipo
         self.dilucion = dilucion
         self.volumen = volumen
         self.colonias = colonias
 
     def calcular_ufc(self):
-        '''
-        Calcula las Unidades Formadoras de Colonias (UFC) del cultivo.
-        '''
+
+        return self.colonias / (
+            self.dilucion * self.volumen
+        )
+
+    def clasificar_crecimiento(self):
+
         if self.colonias == 0:
             return "Sin crecimiento"
-        
+
         elif self.colonias <= 30:
-            return "Crecimiento bajo"
-        
+            return "Bajo"
+
         elif self.colonias <= 300:
-            return "Crecimiento aceptable"
-        
-        elif self.colonias > 300:
+            return "Aceptable"
+
+        else:
             return "Incontable"
-    
-    def mostrar_ datos(self):
-        '''
-        Muestra toda la información
-        '''
+
+    def mostrar_datos(self):
+
+        print("\n===== CULTIVO =====")
+        print(f"Caja: {self.numero_caja}")
         print(f"Medio: {self.tipo_medio}")
-        print(f"Numero de caja: {self.numero_caja}")
-        print(f"Dilución: {self.dilucion}")
-        print(f"Volumen: {self.volumen} mL")
+        print(f"Dilucion: {self.dilucion}")
+        print(f"Volumen: {self.volumen}")
         print(f"Colonias: {self.colonias}")
         print(f"UFC/mL: {self.calcular_ufc():,.2f}")
+        print(
+            f"Clasificacion: "
+            f"{self.clasificar_crecimiento()}"
+        )
+        
