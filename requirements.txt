@@ -1,1 +1,2 @@
 # Dependencias por definir durante la implementación
+#SIN DEPENDENCIAS EXTERNAS
